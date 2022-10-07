@@ -50,7 +50,7 @@ character-set-server           = utf8mb4
 collation-server               = utf8mb4_unicode_ci
 ```
 ### application.yaml
-``yaml
+```yaml
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://218.236.22.90:3306/dashboard?serverTimezone=UTC&characterEncoding=UTF-8
