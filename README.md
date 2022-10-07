@@ -75,4 +75,40 @@ collation-server               = utf8mb4_unicode_ci
 			<scope>runtime</scope>
 		</dependency>
 
+
+```
+### application.yaml
+```yaml
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+  datasource:
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWD}
+    driverClassName: com.mysql.cj.jdbc.Driver
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: ${KAFKA_BROKER}
+```
+
+### myenv.yaml
+```yaml
+apiVersion: v1
+data:
+  KAFKA_BROKER: "my-kafka.kafka:9092"
+  MYSQL_URL: "jdbc:mysql://mysql.db:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8"
+  MYSQL_USER: "root"
+  MYSQL_PASSWD: "kjT30U58R4"
+  EXTERNAL_SERVER: "check-server:8080"
+kind: ConfigMap
+metadata:
+  name: hanadream
 ```
