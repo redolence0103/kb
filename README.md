@@ -49,3 +49,30 @@ character-set-client-handshake = FALSE
 character-set-server           = utf8mb4
 collation-server               = utf8mb4_unicode_ci
 ```
+### application.yaml
+``yaml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://218.236.22.90:3306/dashboard?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: dbdpswls
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL57Dialect
+```
+### pom.xml
+```xml		
+    <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+```
