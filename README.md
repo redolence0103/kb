@@ -26,3 +26,26 @@
     depends_on:
       - kafka
 ```
+### .env
+```text
+MYSQL_HOST=localhost
+MYSQL_PORT=3306
+MYSQL_ROOT_PASSWORD=dbdpswls
+MYSQL_DATABASE=dashboard
+MYSQL_USER=inti
+MYSQL_PASSWORD=inti1234
+```
+
+### my.cnf
+```text
+[client]
+default-character-set = utf8mb4
+
+[mysql]
+default-character-set = utf8mb4
+
+[mysqld]
+character-set-client-handshake = FALSE
+character-set-server           = utf8mb4
+collation-server               = utf8mb4_unicode_ci
+```
