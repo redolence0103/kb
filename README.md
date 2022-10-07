@@ -112,3 +112,14 @@ kind: ConfigMap
 metadata:
   name: hanadream
 ```
+### create_table.sql
+```sql
+CREATE TABLE Dashboard_table (
+   id BIGINT(20) NOT NULL,
+   buyer VARCHAR(255),
+   name VARCHAR(20),
+   price BIGINT(20),
+   status VARCHAR(255),
+   PRIMARY KEY (id)
+);
+```
